@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Dice Roller Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            padding: 50px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            display: inline-block;
+        }
+        .dice {
+            font-size: 6rem;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            font-size: 1.8rem;
+            padding: 12px 30px;
+            border: none;
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #ff4b2b, #ff416c);
+            transform: scale(1.05);
+        }
+        #result {
+            font-size: 2rem;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 Ultimate Dice Roller Game 🎲</h1>
+        <div class="dice">
+            <span id="die1">🎲</span>
+            <span id="die2">🎲</span>
+        </div>
+        <button id="rollButton">Roll the Dice!</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById("rollButton").addEventListener("click", function() {
+            const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+            let roll1 = Math.floor(Math.random() * 6);
+            let roll2 = Math.floor(Math.random() * 6);
+            
+            document.getElementById("die1").textContent = diceFaces[roll1];
+            document.getElementById("die2").textContent = diceFaces[roll2];
+            
+            let total = roll1 + 1 + roll2 + 1;
+            document.getElementById("result").textContent = `🎉 You rolled a ${total}! 🎉`;
+        });
+    </script>
+</body>
+</html>
