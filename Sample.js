@@ -1,1 +1,0 @@
-/// The dice game is popular in France in 1800's.
